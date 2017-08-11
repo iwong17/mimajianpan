@@ -273,7 +273,7 @@ char LoadKey_DES(unsigned char add,unsigned char *msg)
 	cmd_send[4]=msg[0];
 	for(i=0;i<msg[0]>>3;i++)
 	{
-		des(msg+1+i*8,cmd_send+5+i*8,"13241324",1);
+		des(msg+1+i*8,cmd_send+5+i*8,"13241324",1);//13241324Îª´«ÊäÃÜÔ¿
 	}
 
    	for(i=0;i<2;i++)
