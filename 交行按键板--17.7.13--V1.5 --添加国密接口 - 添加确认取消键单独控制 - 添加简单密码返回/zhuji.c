@@ -88,7 +88,7 @@ void Beep(void)
 		for(j = 0;j < 44;j++);   //音频，22M为17KHz
 		{
 			beep = ~beep;
-			if (RI) return;
+			if (RI) return; //RI时退出，优先响应命令
 		}
 	}
 }
@@ -1007,7 +1007,7 @@ unsigned char Scankey(void)
 					if(beepflag & 1)Beep();	
 				    return led_key[5]+0x30;
 				case 0x7d:
-					if (RI) return 0;
+					if (RI) return 0; //RI时退出，优先响应命令
 					if(beepflag & 1)Beep();	
 				    return led_key[4]+0x30;
 				case 0xdb:
