@@ -186,7 +186,7 @@ bit OutOfOrder(void)
 		{																						//每组的第一个存入maval[][]中
 			if(led_key[1] == led_key[0])continue;			//若与前面的数码管数字相同则跳出	//通过循环找到第random1组第random2个，实现乱序
 			for(led_key[2] = i[2];led_key[2] < 10;led_key[2]++)	//穷举chose7的数码管			//为简化算法，穷举法的顺序与硬件顺序相反如下图
-			{																					//	 0			 chose9
+			{																					                                 //	 0			 chose9
 				if((led_key[2] == led_key[0])||(led_key[2] == led_key[1]))continue;				// 1 2 3  chose8 chose7 chose6  即循环中的led_key[0]
 				if(Comp(led_key[2],led_key[1],led_key[0]))continue;//若与周围显示相邻则跳出		// 4 5 6  chose5 chose4 chose3  并非对应chose0的数码管
 				for(led_key[3] = i[3];led_key[3] < 10;led_key[3]++)	//穷举chose6的数码管		// 7 8 9  chose2 chose1 chose0 	而是对应chose9的数码管
